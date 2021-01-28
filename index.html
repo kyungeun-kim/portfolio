@@ -25,7 +25,7 @@
             // For early access or custom font
             custom: {
                 families: ['Noto Sans KR', 'NanumSquare'],
-                urls: [',/css/NotoSans.css', ',/css/NanumSquare.css', ',/css/SpoqaHanSans.css']
+                urls: ['./css/NotoSans.css', './css/NanumSquare.css', './css/SpoqaHanSans.css']
             }
         });
     </script>
@@ -108,7 +108,6 @@
 	<!-- // wrapper -->
 		
 	<script>
-		alert();
         $(function() {
             $.get("/include/header.html", function(data, status){
 				$("[data-include='header']").html(data);
