@@ -1,0 +1,93 @@
+<div class="sub_top">
+	<h2 class="sub_top_tit animated fadeInUp">2차메뉴명</h2>
+	<!-- bread_box -->
+	<div class="bread_box">
+		<div class="container">
+			<ul class="breadcrumb clearfix">
+				<li class="home"><a href="/"><i class="xi-home"></i></a></li>
+				<li><a href="#">1차메뉴명</a>
+					<ul class="depth_list">
+						<li><a href="#">1차메뉴명</a></li>
+						<li><a href="#">1차메뉴명</a></li>
+						<li><a href="#">1차메뉴명</a></li>
+						<li><a href="#">1차메뉴명</a></li>
+					</ul>
+				</li>
+				<li><a href="#">2차메뉴명</a>
+					<ul class="depth_list">
+						<li><a href="#">2차메뉴명</a></li>
+						<li><a href="#">2차메뉴명</a></li>
+						<li><a href="#">2차메뉴명</a></li>
+					</ul>
+				</li>
+				
+			</ul>
+			<ul class="btn_list">
+				<li class="share"><a href="#"><i class="xi-share-alt"></i></a>
+					<ul class="sub_share_box">
+						<li class="facebook"><a href="#" onclick="SnsShare.fbShare(document.location.href); return false;"><i class="xi-facebook"></i><span class="hide">페이스북으로 공유</span></a></li>
+						<li class="twitter"><a href="#" onclick="SnsShare.twShare(document.title, document.location.href); return false;"><i class="xi-twitter"></i><span class="hide">트위터로 공유</span></a></li>
+						<li class="kakaostory"><a href="#" onclick="SnsShare.storyShare(document.location.href); return false;"><i class="xi-kakaostory"></i><span class="hide">카카오스토리로 공유</span></a></li>
+						<li class="googleplus"><a href="#" onclick="SnsShare.ggShare(document.location.href); return false;"><i class="xi-google-plus"></i><span class="hide">구글플러스로 공유</span></a></li>
+						<li class="blog"><a href="#" onclick="SnsShare.blogShare(document.title, document.location.href); return false;"><i class="xi-naver-square"></i><span class="hide">네이버블로그로 공유</span></a></li>
+					</ul>
+				</li>
+				<li class="print"><a href="#"><i class="xi-print"></i></a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- // bread_box -->
+</div>
+<script type="text/javascript">
+	if($(".bread_box .breadcrumb > li").length > 3){
+		$(".bread_box .breadcrumb").addClass("depth3");
+	}
+
+	$(function(){
+		var speed = 500,
+		easing = "easeOutQuint";
+
+		// depth 열린 상태일 경우 안보이게
+		$(document).click(function(){
+			$(".bread_box .breadcrumb > li").removeClass("on");
+			$(".bread_box .breadcrumb > li .depth_list:visible").slideUp();
+			$(".bread_box .btn_list > li .sub_share_box:visible").hide();
+			
+		});
+
+		// breadcrumb의 li 클릭 시
+		$(".bread_box .breadcrumb > li > a").click(function(){
+			if(!$(this).parent("li").hasClass("home")){
+				if($(this).next(".depth_list").is(":hidden")){
+					$(".bread_box .breadcrumb > li").removeClass("on");
+					$(".depth_list:visible").slideUp(speed, easing);
+					$(this).parent("li").addClass("on");
+					$(this).next(".depth_list").slideDown(speed, easing);
+				}
+				else{
+					$(this).parent("li").removeClass("on");
+					$(this).next(".depth_list").slideUp(speed, easing);
+				}
+				return false;
+			}
+		});
+
+		// 공유버튼
+		$(".bread_box .btn_list > li.share > a").click(function(){
+			if($(this).next(".sub_share_box").is(":hidden")){
+				$(".sub_share_box:visible").hide();
+				$(this).next(".sub_share_box").show();
+			}
+			else{
+				$(this).next(".sub_share_box").hide();
+			}
+			return false;
+		});
+
+		// 프린트버튼
+		$(".bread_box .btn_list > li.print > a").click(function(){
+			window.print();
+			return false;
+		});
+	});
+</script>

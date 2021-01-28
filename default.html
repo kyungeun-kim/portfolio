@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<!-- title -->
+	<meta charset="UTF-8">
+    <meta name="Author" content="김경은">
+    <meta name="Keywords" content="웹퍼블리셔, 프론트엔드 개발자, front-end developer, 웹에이전시, 경력 퍼블리셔">
+    <meta name="Description" content="개인 포트폴리오 사이트입니다.">
+    <meta property="og:title" content="KE_PORTFOLIO??">
+    <meta property="og:description" content="웹퍼블리셔 김경은의 포트폴리오 사이트입니다">
+    <meta property="og:image" content="/ke_pflio/images/common/head_logo.png">
+    <meta property="og:url" content="url">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta http-equiv="Expires" content="-1"> 
+	<meta http-equiv="Pragma" content="no-cache"> 
+	<meta http-equiv="Cache-Control" content="No-Cache"> 
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/webfont/1.4.10/webfont.js"></script>
+    <script type="text/javascript">
+        WebFont.load({
+            // For google fonts
+            google: {
+                families: ['Open Sans']
+            },
+            // For early access or custom font
+            custom: {
+                families: ['Noto Sans KR', 'NanumSquare'],
+                urls: ['/ke_pflio/css/NotoSans.css', '/ke_pflio/css/NanumSquare.css', '/ke_pflio/css/SpoqaHanSans.css']
+            }
+        });
+    </script>
+    <link rel="shortcut icon" type="image/x-icon" href="/ke_pflio/images/common/favicon.ico" >
+    <title>KE_PORTFOLIO??</title>
+	<!-- // title -->
+
+	<!-- common_css -->
+	<link rel="stylesheet" type="text/css" href="/ke_pflio/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="/ke_pflio/css/board.css">
+	<link rel="stylesheet" type="text/css" href="/ke_pflio/css/common.css">
+	<link rel="stylesheet" type="text/css" href="/ke_pflio/css/comm_respond.css">
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+	<link rel="stylesheet" type="text/css" href="/ke_pflio/css/animate.css">
+	<link rel="stylesheet" type="text/css" href="/ke_pflio/css/print.css">
+	<!-- // common_css -->
+	
+	<!-- common_js -->
+	<script type="text/javascript" src="/ke_pflio/js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="/ke_pflio/js/jquery-migrate-1.4.1.min.js"></script>
+	<script type="text/javascript" src="/ke_pflio/js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="/ke_pflio/js/wow.min.js"></script>
+	<script type="text/javascript" src="https://unpkg.com/default-passive-events"></script>
+	<script type="text/javascript" src="/ke_pflio/js/common.js"></script>
+
+	<!--[if lt IE 10]>
+		<script src="/ke_pflio/js/placeholders.min.js" type="text/javascript"></script>
+	<![endif]-->
+	<!--[if lt IE 9]>
+		<script src="/ke_pflio/js/html5shiv.js" type="text/javascript"></script>
+		<script src="/ke_pflio/js/respond.min.js" type="text/javascript"></script>
+		<script src="/ke_pflio/js/selectivizr-min.js" type="text/javascript"></script>
+	<![endif]-->
+
+	<script type="text/javascript">
+		/* 브라우저 체크 (IE) */
+		var ua = navigator.userAgent.toLowerCase();
+		if( ua.indexOf( 'msie' ) != -1 || ua.indexOf( 'trident' ) != -1 ) {
+			var version = 11;
+			ua = /msie ([0-9]{1,}[\.0-9]{0,})/.exec( ua );
+			if( ua )
+			{
+				version = parseInt( ua[ 1 ] );
+			}
+			var classNames = '';
+			classNames += ' is-ie';
+			classNames += ' ie' + version;
+			for( var i = version + 1; i <= 11; i++ ) {
+				classNames +=  ' lt-ie' + i;
+			}
+			document.getElementsByTagName( 'html' )[ 0 ].className += classNames;
+		}
+	</script>
+	<!-- // common_js -->
+
+	<!-- 추가 css -->
+	<link rel="stylesheet" href="/ke_pflio/css/main.css" type="text/css">
+	<link rel="stylesheet" href="/ke_pflio/css/main_respond.css" type="text/css">
+	<!-- // 추가 css -->
+</head>
+<body>
+	<!-- wrapper -->
+	<div class="wrapper">
+		<!-- header -->
+		<div data-include="header"></div>
+		<!-- // header -->
+
+		<!-- contents -->
+		<div id="real_contents" class="contents">
+			<div class="container">
+				
+			</div>
+		</div>
+		<!-- // contents -->
+
+		<!-- footer -->
+		<div data-include="footer"></div>
+		<!-- // footer -->
+	</div>
+	<!-- // wrapper -->
+		
+	<script>
+        $(function() {
+            $.get("/ke_pflio/include/header.html", function(data, status){
+				$("[data-include='header']").html(data);
+				$.getScript("/ke_pflio/js/common.js");
+			});
+            $.get("/ke_pflio/include/footer.html", function(data, status){
+				$("[data-include='footer']").html(data);
+			});
+        });
+    </script>
+	
+</body>
+</html>
+
+

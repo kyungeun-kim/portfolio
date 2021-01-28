@@ -1,0 +1,148 @@
+<div id="footer" class="footer">
+	<!-- quick_box -->
+	<div class="quick_box">
+		<div class="q_share_box">
+			<button type="button" class="share_btn"><i class="xi-share-alt-o"></i><span class="hide">sns 공유버튼 열기</span></button>
+			<ul class="q_share_menu">
+				<li class="facebook"><a href="#" onclick="SnsShare.fbShare(document.location.href); return false;"><i class="xi-facebook"></i><span class="hide">페이스북으로 공유</span></a></li>
+				<li class="twitter"><a href="#" onclick="SnsShare.twShare(document.title, document.location.href); return false;"><i class="xi-twitter"></i><span class="hide">트위터로 공유</span></a></li>
+				<li class="kakaostory"><a href="#" onclick="SnsShare.storyShare(document.location.href); return false;"><i class="xi-kakaostory"></i><span class="hide">카카오스토리로 공유</span></a></li>
+				<li class="googleplus"><a href="#" onclick="SnsShare.ggShare(document.location.href); return false;"><i class="xi-google-plus"></i><span class="hide">구글플러스로 공유</span></a></li>
+				<li class="blog"><a href="#" onclick="SnsShare.blogShare(document.title, document.location.href); return false;"><i class="xi-naver-square"></i><span class="hide">네이버블로그로 공유</span></a></li>
+			</ul>
+		</div>
+		<button type="button" class="top_btn"><i class="xi-arrow-up"></i><span class="hide">상단으로 이동</span></button>
+	</div>
+	<!-- // quick_box -->
+
+	<!-- banner_box1 -->
+	<div class="banner_box1">
+		<!-- container -->
+		<div class="container">
+			<!-- banner_slider -->
+			<ul class="banner_slider">
+				<li><a href=""><img src="/images/common/head_logo.png" alt=""></a></li>
+				<li><a href=""><img src="/images/common/head_logo.png" alt=""></a></li>
+				<li><a href=""><img src="/images/common/head_logo.png" alt=""></a></li>
+				<li><a href=""><img src="/images/common/head_logo.png" alt=""></a></li>
+				<li><a href=""><img src="/images/common/head_logo.png" alt=""></a></li>
+				<li><a href=""><img src="/images/common/head_logo.png" alt=""></a></li>
+				<li><a href=""><img src="/images/common/head_logo.png" alt=""></a></li>
+			</ul>
+			<!-- // banner_slider --> 
+		</div>
+		<!-- // container -->
+		<link rel="stylesheet" type="text/css" href="/css/slick.css">
+		<link rel="stylesheet" type="text/css" href="/css/slick-theme.css">
+		<script type="text/javascript" src="/js/slick.min.js"></script>
+		<script type="text/javascript">			
+			$(document).ready(function(){
+				$('.banner_box1 .banner_slider').slick({
+					autoplay: true,
+					autoplaySpeed: 2000,
+					infinite: true,
+					dots: false,
+					slidesToShow: 6,
+					slidesToScroll: 1,
+					responsive: [
+						{
+							breakpoint: 991,
+							settings: {
+								slidesToShow: 4
+							}
+						},
+						{
+							breakpoint: 769,
+							settings: {
+								slidesToShow: 3
+							}
+						},
+						{
+							breakpoint: 480,
+							settings: {
+								slidesToShow: 1
+							}
+						}
+					]
+				});
+				
+				footH();
+				function footH(){
+					var fH = $(".footer").outerHeight();
+					$("#real_contents").css("padding-bottom", fH);
+				}
+
+				$(window).resize(function(){
+					footH();
+				});
+			});
+		</script>		
+	</div>
+	<!-- // banner_box1 -->
+
+	<!-- foot_top -->
+	<div class="foot_top">
+		<!-- container -->
+		<div class="container clearfix"> 			
+			<!-- link_list -->
+			<ul class="link_list clearfix">
+				<li><a href="/service/privacy.asp" class="fw_bold">개인정보처리방침</a></li>
+				<li><a href="/service/use.asp">이용약관</a></li>
+				<li><a href="/service/email_reject.asp">이메일무단수집거부</a></li>
+			</ul>
+			<!-- // link_list -->
+			<!-- site_box -->
+			<div class="site_box">
+				<div class="baro_box">
+					<button type="button" class="site_btn">관련사이트 바로가기 
+						<i class="xi-angle-up arr"></i>
+					</button> 					
+					<ul class="site_link">
+						<li><a href="" target="_blank">관련사이트</a></li>
+						<li><a href="" target="_blank">관련사이트</a></li>
+						<li><a href="" target="_blank">관련사이트</a></li>
+						<li><a href="" target="_blank">관련사이트</a></li>
+					</ul>  
+					<button type="button" class="foot_top_btn"><i class="xi-angle-up"></i>TOP</button>
+				</div>
+				<!--<button type="button" class="top_btn2">TOP</button>-->
+			</div>  
+			<!-- // site_box -->
+			<script type="text/javascript">			
+				/* foot_site_menu */
+				var foot_site_speed = 300,
+					foot_site_easing = "easeOutQuint";
+				$(".site_btn").click(function(e){
+					if($(this).siblings(".site_link").is(":hidden")){
+						$(".site_link:visible").slideUp(foot_site_speed, foot_site_easing);
+						$(this).addClass("on").siblings(".site_link").slideDown(foot_site_speed, foot_site_easing);
+					}
+					else{
+						$(this).removeClass("on").siblings(".site_link").slideUp(foot_site_speed, foot_site_easing);
+					}
+					e.stopPropagation();
+				});
+
+				$(document).click(function(){
+					$(".site_btn").removeClass("on");
+					$(".site_link:visible").slideUp(foot_site_speed, foot_site_easing);
+				});
+			</script>			
+		</div>
+		<!-- // container -->
+	</div>  
+	<!-- //foot_top -->
+	<!-- foot_btm -->
+	<div class="foot_btm">
+		<div class="container">
+			<a href="/" class="foot_logo"><img src="/images/common/head_logo.png" alt="GAPIA NET"></a>
+			<div class="txt_box">
+				<p>경기도 수원시 팔달구 권광로 146(인계동 1125-2)벽산그랜드코아 501-1호</p>
+				<p>Tel:031-247-9711 FAX:031-247-9712 E-mail:hkpark@gapia.net</p>
+				<p></p>
+				<p class="copyright">COPYRIGHT &copy; GAPIA ALL RIGHTS RESERVED.</p>
+			</div>
+		</div>
+	</div>
+	<!-- // foot_btm -->
+</div>
