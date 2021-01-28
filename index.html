@@ -87,6 +87,11 @@
 	<!-- // 추가 css -->
 </head>
 <body>
+
+	<!-- loading -->
+	<div class="loader"></div>
+	<!-- // loading -->
+
 	<!-- wrapper -->
 	<div class="wrapper">
 		<!-- header -->
@@ -115,6 +120,11 @@
 			});
             $.get("./include/footer.html", function(data, status){
 				$("[data-include='footer']").html(data);
+			});
+
+			//로딩 이벤트
+			$(window).load(function(){
+				$(".loader").fadeOut();
 			});
         });
     </script>
