@@ -109,11 +109,11 @@
 		
 	<script>
         $(function() {
-            $.get("/include/header.html", function(data, status){
+            $.get("./include/header.html", function(data, status){
 				$("[data-include='header']").html(data);
 				$.getScript("./js/common.js");
 			});
-            $.get("/include/footer.html", function(data, status){
+            $.get("./include/footer.html", function(data, status){
 				$("[data-include='footer']").html(data);
 			});
         });
